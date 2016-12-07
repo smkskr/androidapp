@@ -51,7 +51,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    //Add superhero
+    //Add riddles
     public void addRiddles(Riddles riddles){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -80,12 +80,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 riddle.setQuestion(cursor.getString(1));
                 riddle.setAnswer(cursor.getString(2));
 
-                // Adding contact to list
+                // Adding riddle to list
                 riddles.add(riddle);
             } while (cursor.moveToNext());
         }
 
-        // return contact list
+        // return riddle list
         return riddles;
 
     }
